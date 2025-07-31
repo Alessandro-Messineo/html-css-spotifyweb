@@ -22,7 +22,7 @@ body{
 .navbar{
     width: 250px;
     background-color: black;
-    padding: 10px;
+    padding: 10px 10px 10px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -32,10 +32,12 @@ body{
 #logo{
     width: 60%;
     margin-bottom: 20px;
+    margin-left: 10px;
 }
 
 #logo-small{
     display: none;
+    margin-left: 10px;
 }
 
 ul{
@@ -46,6 +48,16 @@ ul{
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+#menu li.border-li {
+    border-left: 4px solid #b5ff2f;
+    color: white;
+    padding-left: 6px;
+}
+
+#menu li, .playlist li, .playlist b, .down-navbar {
+    padding-left: 10px;
 }
 
 li{
@@ -314,9 +326,14 @@ li.white:hover span {
 /* mobile version (xs)*/
 @media screen and (max-width:580px) {
     /*navbar*/
-    ul span,b, .playlist i,hr, .down-navbar span,#logo{
+    ul span,.playlist b, .playlist i,hr, .down-navbar span, #logo, .border-li{
         display: none;
     }
+
+    #menu li.border-li {
+    border-left: 0 solid #b5ff2f;
+    margin-left: 4px;
+}
 
     #logo-small{
         display: block;
