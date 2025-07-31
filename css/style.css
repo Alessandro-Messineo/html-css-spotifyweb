@@ -64,6 +64,16 @@ li{
     margin-bottom: 15px; 
 }
 
+.up-navbar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.playlist {
+    overflow-y: auto;
+}
+
 .playlist i{
     background-color: gray;
     color: black;
@@ -326,7 +336,7 @@ li.white:hover span {
 /* mobile version (xs)*/
 @media screen and (max-width:580px) {
     /*navbar*/
-    ul span,.playlist b, .playlist i,hr, .down-navbar span, #logo, .border-li{
+    ul span, hr, .down-navbar span, #logo, .border-li, .playlist{
         display: none;
     }
 
