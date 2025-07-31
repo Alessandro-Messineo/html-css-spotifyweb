@@ -52,18 +52,18 @@ li{
     margin-bottom: 15px; 
 }
 
-#playlist i{
+.playlist i{
     background-color: gray;
     color: black;
     font-size: 30px;
 }
 
-#playlist b{
+.playlist b{
     margin-bottom: 10px;
     display: block;
 }
 
-#playlist li {
+.playlist li {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -133,8 +133,10 @@ b, #white{
 }
 
 .link{
-    text-align: center;
     padding-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 a{
@@ -145,6 +147,16 @@ a{
     font-size: 13px;
 }
 
+.flex-a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.border{
+    border-bottom: 2px solid #b5ff2f;
+    width: 30px;
+}
 
 
 .music{
@@ -230,6 +242,53 @@ a{
     opacity: 1;
 }
 
+.cta-btn:hover{
+    transform: scale(1.1);
+}
+
+li span:hover,
+.down-navbar span:hover,
+.home a:hover,
+.fa-heart:hover,
+.fa-folder:hover, .title span:hover{
+  color: white;
+  cursor: pointer;
+}
+
+li.white:hover i {
+  background-color: white;
+}
+
+
+li.white:hover span {
+  color: white;
+}
+
+.title span:hover{
+    border-bottom: 1px solid;
+}
+
+.player-controls i, .icon i, .progress-bar, .volume-bar{
+    cursor: pointer;
+}
+
+.player-controls .fa-circle-play:hover{
+    transform: scale(1.1);
+}
+
+.progress-fill:hover, .volume-fill:hover, .progress-bar:hover .progress-fill, .volume-bar:hover .volume-fill {
+    background-color: #b5ff2f;
+    cursor: pointer;
+}
+
+.progress-bar:hover .progress-fill::after {
+    opacity: 1;
+}
+
+
+.volume-bar:hover .volume-fill::after {
+    opacity: 1;
+}
 
 /* tablet version (md) */
 @media screen and (max-width:1000px) {
@@ -255,7 +314,7 @@ a{
 /* mobile version (xs)*/
 @media screen and (max-width:580px) {
     /*navbar*/
-    ul span,b, #playlist i,hr, .down-navbar span,#logo{
+    ul span,b, .playlist i,hr, .down-navbar span,#logo{
         display: none;
     }
 
@@ -358,6 +417,7 @@ a{
     gap: 20px;
     font-size: 20px;
     align-items: center;
+    height: 35px;
 }
 
 .play-icon {
@@ -381,6 +441,7 @@ a{
     height: 5px;
     background-color: #555;
     border-radius: 3px;
+    position: relative;
 }
 
 .progress-fill {
@@ -389,6 +450,20 @@ a{
     background-color: white;
     border-radius: 3px;
 }
+
+.progress-fill::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-40%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+}
+
 
 .volume{
     width: 250px;
@@ -408,6 +483,7 @@ a{
     border-radius: 3px;
     margin-left: 10px;
     flex: 1;
+    position: relative;
 }
 
 .volume-fill {
@@ -416,6 +492,20 @@ a{
     background-color: white;
     border-radius: 3px;
 }
+
+.volume-fill::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-40%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+}
+
 
 /* tablet version (md) */
 @media screen and (max-width:1000px) {
@@ -443,5 +533,16 @@ a{
 
     .song img{
         width: 50%;
+    }
+}
+
+
+@media screen and (max-width:500px){
+    .song img{
+        display: none;
+    }
+
+    .song{
+        flex: 1 1 auto;
     }
 }
